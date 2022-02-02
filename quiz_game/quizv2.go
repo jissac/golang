@@ -34,9 +34,10 @@ func main() {
 	correct := 0
 	for i,p := range problems {
 		fmt.Printf("Problem #%d: %s = \n", i+1, p.q)
+		// Channels: https://gobyexample.com/channels
 		answerCh := make(chan string)
 		// anonymous function, go routine
-		// closure uses data that was defined outside of it
+		// closure: similar to anon fn, except uses data that was defined outside of it
 		go func() {	
 			var answer string
 			fmt.Scanf("%s\n", &answer)
